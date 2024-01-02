@@ -1,52 +1,102 @@
 /** @format */
 
-import React, { useState } from "react";
-import { ScrollView, Text, StyleSheet, TextInput } from "react-native";
+import React from "react";
+import {
+  ScrollView,
+  Image,
+  StyleSheet,
+  Text,
+  useColorScheme,
+} from "react-native";
 
-export default function WelcomeScreen() {
-  const [firstName, onChangeFirstName] = useState("");
+const Welcome = () => {
+  const colorSchema = useColorScheme();
   return (
-    <ScrollView style={styles.container}>
-      <Text style={styles.headerText}>Welcome to Little Lemon</Text>
-      <Text style={styles.regularText}>
-        Little Lemon is a charming neighborhood bistro that serves simple food
-        and classic cocktails in a lively but casual environment. We would love
-        to hear more about your experience with us!
-      </Text>
-      <TextInput
-        style={styles.inputBox}
-        value={firstName}
-        onChangeText={onChangeFirstName}
-        placeholder={"First Name"}
+    <ScrollView
+      style={[
+        styles.container,
+        { backgroundColor: colorSchema === "dark" ? "#495E57" : "#fff" },
+      ]}
+    >
+      <Image
+        style={styles.logo}
+        source={require("../img/LittleLemonLogo.png")}
+        resizeMode="center"
+        accessible={true}
+        accessibilityLabel={"Little Lemon Logo"}
       />
+
+      <Text style={styles.title}>
+        Little Lemon, your local Mediterranean Bistro
+      </Text>
+      <Text style={styles.subtitle}>Colors Scheme : {colorSchema}</Text>
+
+      {/*  <Image
+        style={styles.image}
+        source={require("../img/Picture1.png")}
+        resizeMode="cover"
+        accessible={true}
+        accessibilityLabel={"Little Lemon Logo"}
+      />
+      <Image
+        style={styles.image}
+        source={require("../img/Picture2.png")}
+        resizeMode="cover"
+        accessible={true}
+        accessibilityLabel={"Little Lemon Logo"}
+      />
+      <Image
+        style={styles.image}
+        source={require("../img/Picture3.png")}
+        resizeMode="cover"
+        accessible={true}
+        accessibilityLabel={"Little Lemon Logo"}
+      />
+      <Image
+        style={styles.image}
+        source={require("../img/Picture4.png")}
+        resizeMode="cover"
+        accessible={true}
+        accessibilityLabel={"Little Lemon Logo"}
+      /> */}
     </ScrollView>
   );
-}
+};
 
 const styles = StyleSheet.create({
+  logo: {
+    height: 100,
+    width: 300,
+  },
+  image: {
+    width: 350,
+    height: 250,
+    borderRadius: 10,
+    marginVertical: 5,
+  },
   container: {
     flex: 1,
+    padding: 24,
+    marginTop: 25,
+    backgroundColor: "#fff",
   },
-  headerText: {
-    padding: 40,
-    fontSize: 30,
-    color: "#EDEFEE",
+
+  title: {
+    marginTop: 16,
+    paddingVertical: 10,
+    color: "#333333",
     textAlign: "center",
+    fontSize: 20,
+    fontWeight: "bold",
+    backgroundColor: "#F4CE14",
   },
-  regularText: {
-    fontSize: 24,
-    padding: 20,
-    marginVertical: 8,
-    color: "#EDEFEE",
-    textAlign: "center",
-  },
-  inputBox: {
-    height: 40,
-    margin: 12,
-    borderWidth: 1,
-    padding: 10,
+  subtitle: {
     fontSize: 16,
-    borderColor: "#EDEFEE",
-    backgroundColor: "#EDEFEE",
+    padding: 10,
+    color: "#333333",
+    fontWeight: "bold",
+    alignSelf: "center",
   },
 });
+
+export default Welcome;
