@@ -15,7 +15,7 @@ export default function LittleLemonHeader() {
 
 const headerStyles = StyleSheet.create({
   container: {
-    backgroundColor: "#DF5F34",
+    backgroundColor: "#D78A71",
   },
   headerText: {
     padding: 20,
