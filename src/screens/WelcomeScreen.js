@@ -1,5 +1,6 @@
 /** @format */
 
+import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import {
   ScrollView,
@@ -7,10 +8,12 @@ import {
   StyleSheet,
   Text,
   useColorScheme,
+  Pressable,
 } from "react-native";
 
 const Welcome = () => {
   const colorSchema = useColorScheme();
+  const navigation = useNavigation();
   return (
     <ScrollView
       style={[
@@ -25,12 +28,19 @@ const Welcome = () => {
         accessible={true}
         accessibilityLabel={"Little Lemon Logo"}
       />
-
       <Text style={styles.title}>
         Little Lemon, your local Mediterranean Bistro
       </Text>
-      <Text style={styles.subtitle}>Colors Scheme : {colorSchema}</Text>
 
+      <Pressable
+        style={styles.button}
+        onPress={() => {
+          navigation.navigate("Menu");
+        }}
+      >
+        <Text style={styles.buttonText}>View Menu</Text>
+      </Pressable>
+      <Text style={styles.subtitle}>Colors Scheme : {colorSchema}</Text>
       {/*  <Image
         style={styles.image}
         source={require("../img/Picture1.png")}
@@ -96,6 +106,19 @@ const styles = StyleSheet.create({
     color: "#333333",
     fontWeight: "bold",
     alignSelf: "center",
+  },
+  button: {
+    backgroundColor: "#BCB9AA",
+    padding: 10,
+    margin: 10,
+    width: "50%",
+    alignSelf: "center",
+  },
+  buttonText: {
+    color: "black",
+    fontSize: 20,
+    fontWeight: "bold",
+    textAlign: "center",
   },
 });
 

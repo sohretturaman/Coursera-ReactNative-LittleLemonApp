@@ -68,33 +68,20 @@ const MenuItems = () => {
 
   return (
     <View style={menuStyles.container}>
-      {!showMenu && (
-        <Text style={menuStyles.infoSection}>
+      {/*   <Text style={menuStyles.infoSection}>
           Little Lemon is a charming neighborhood bistro that serves simple food
           and classic cocktails in a lively but casual environment. View our
           menu to explore our cuisine with daily specials!
-        </Text>
-      )}
-      <Pressable
-        style={menuStyles.button}
-        onPress={() => {
-          setShowMenu(!showMenu);
-        }}
-      >
-        <Text style={menuStyles.buttonText}>
-          {showMenu ? "Home" : "View Menu"}{" "}
-        </Text>
-      </Pressable>
-      {showMenu && (
-        <SectionList
-          keyExtractor={(item, index) => item + index}
-          sections={menuItemsToDisplay}
-          renderItem={renderItem}
-          renderSectionHeader={renderSectionHeader}
-          ListFooterComponent={() => <LittleLemonFooter />}
-          ItemSeparatorComponent={() => <View style={{ height: 10 }} />}
-        ></SectionList>
-      )}
+        </Text> */}
+
+      <SectionList
+        keyExtractor={(item, index) => item + index}
+        sections={menuItemsToDisplay}
+        renderItem={renderItem}
+        renderSectionHeader={renderSectionHeader}
+        ListFooterComponent={() => <LittleLemonFooter />}
+        ItemSeparatorComponent={() => <View style={{ height: 10 }} />}
+      ></SectionList>
     </View>
   );
 };
@@ -102,6 +89,7 @@ const MenuItems = () => {
 const menuStyles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: "#27362F",
   },
   innerContainer: {
     paddingHorizontal: 40,
@@ -122,19 +110,7 @@ const menuStyles = StyleSheet.create({
     flexWrap: "wrap",
     textAlign: "center",
   },
-  button: {
-    backgroundColor: "#BCB9AA",
-    padding: 10,
-    margin: 10,
-    width: "50%",
-    alignSelf: "center",
-  },
-  buttonText: {
-    color: "black",
-    fontSize: 20,
-    fontWeight: "bold",
-    textAlign: "center",
-  },
+
   infoSection: {
     padding: 20,
     fontSize: 14,

@@ -7,7 +7,6 @@ export default function LittleLemonHeader() {
   return (
     <View style={headerStyles.container}>
       <Text style={headerStyles.headerText}>
-        Welcome to
         <Text style={headerStyles.innerText}> Little Lemon</Text>
       </Text>
     </View>
