@@ -1,7 +1,10 @@
 
 
 
-https://github.com/sohretturaman/Coursera-ReactNative-LittleLemonApp/assets/81382575/159c83bf-5c7b-468e-a869-81fb1f76229f
+https://github.com/sohretturaman/Coursera-ReactNative-LittleLemonApp/assets/81382575/c19e3b65-90f9-4a62-aaf5-b5fa6e512514
+
+
+
 ![submission1](https://github.com/sohretturaman/Coursera-ReactNative-LittleLemonApp/assets/81382575/5a9ffa5d-6cb6-429a-90cc-634147ccd461)
 
 
